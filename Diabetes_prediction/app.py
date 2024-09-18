@@ -11,7 +11,6 @@ os_path = Path(__file__).parents[0]
 st.set_page_config(layout='wide')
 
 
-st.write(os_path)
 st.title('Diabetes prediction app')
 
 gender = st.number_input(label='Input your gender in numbers(0-female, 1-male)')
