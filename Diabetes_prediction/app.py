@@ -2,11 +2,16 @@ import streamlit as st
 import numpy as np
 import joblib
 from sklearn.preprocessing import StandardScaler
+from pathlib import Path
+
+os_path = Path(__file__).parents[0]
+
 
 
 st.set_page_config(layout='wide')
 
 
+st.write(os_path)
 st.title('Diabetes prediction app')
 
 gender = st.number_input(label='Input your gender in numbers(0-female, 1-male)')
@@ -39,7 +44,7 @@ instance = StandardScaler().fit_transform(instance)
 
 
 def generate_results(inst):
-    classifier = joblib.load('./classifier.sav')
+    classifier = joblib.load(f"{os_path}/classifier.sav")
     pred = classifier.predict(inst)
     if pred == 0:
         st.write('No Diabetes tendencies present')
