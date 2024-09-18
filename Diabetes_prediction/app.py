@@ -39,7 +39,7 @@ instance = StandardScaler().fit_transform(instance)
 
 
 def generate_results(inst):
-    classifier = joblib.load('classifier.sav')
+    classifier = joblib.load('./classifier.sav')
     pred = classifier.predict(inst)
     if pred == 0:
         st.write('No Diabetes tendencies present')
