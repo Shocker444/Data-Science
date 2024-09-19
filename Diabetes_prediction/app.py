@@ -42,5 +42,5 @@ def generate_results(inst):
         st.write('Diabetes present. Get medical attention immediately')
 
 if st.button('Generate results', type='primary'):
-    generate_results(instance)
+    generate_results(instance
 
